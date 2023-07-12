@@ -38,7 +38,7 @@ public class Products {
     }
     public String getDesc()
     {
-        return name;
+        return description;
     }
     public void setPrice(int price)
     {

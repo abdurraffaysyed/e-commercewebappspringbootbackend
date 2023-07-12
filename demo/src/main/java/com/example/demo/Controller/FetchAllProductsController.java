@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.Models.Products;
 import com.example.demo.Repositories.ProductsRepo;
@@ -19,6 +20,7 @@ public class FetchAllProductsController {
     @Autowired
     ProductsRepo repo;
     @GetMapping("/")
+    @ResponseBody
     public List<Products> FetchAllProducts()
     {
        

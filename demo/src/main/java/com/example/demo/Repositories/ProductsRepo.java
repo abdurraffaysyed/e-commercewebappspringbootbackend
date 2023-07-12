@@ -12,4 +12,6 @@ public interface ProductsRepo extends MongoRepository<Products,String>{
     @Query("{'_id':?0,'price':?1}")
     Optional<Products> findByIdAndPrice(String id, int price);
     Optional<Products> findById(String id);
+    @Query("value={'name':?0}, delete = true")
+    void deleteByName(String productname);
 }

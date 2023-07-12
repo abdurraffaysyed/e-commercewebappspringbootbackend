@@ -24,6 +24,15 @@ public class ProductsService {
         }
         
     }
+    public Products AddProduct(Products product)
+    {
+        return repo.save(product);
+    }
+    public void DeleteProduct(String productname)
+    {
+        repo.deleteByName(productname);
+        
+    }
     public Optional<Products> FetchProductByIDAndPrice(String id, int price){
         try {
             return repo.findByIdAndPrice(id, price);
