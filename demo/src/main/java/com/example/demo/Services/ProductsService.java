@@ -33,6 +33,29 @@ public class ProductsService {
         repo.deleteByName(productname);
         
     }
+    public void DeleteProductByNameAndPrice(String productname, int price)
+    {
+        repo.deleteByNameAndPrice(productname, price);
+        
+    }
+    public Products UpdateProduct(Products product)
+    {
+        return repo.save(product);
+        
+    }
+    public List<Products> UpdateProductByName(String productname, Products product)
+    {
+        List<Products> products = repo.findAllByName(productname);
+        
+        for(Products prod : products)
+        {
+            prod.setPrice(product.getPrice());
+            prod.setDescription("They are good people");
+            prod.setCount(product.getCount());
+        }
+        return repo.saveAll(products);
+        
+    }
     public Optional<Products> FetchProductByIDAndPrice(String id, int price){
         try {
             return repo.findByIdAndPrice(id, price);

@@ -11,16 +11,21 @@ import com.example.demo.Models.Products;
 import com.example.demo.Services.ProductsService;
 
 @RestController
-@RequestMapping("/api/delete/product")
+@RequestMapping("/api/delete/")
 public class DeleteSingleProduct {
     @Autowired
     private ProductsService service;
    
     
-    @DeleteMapping("/p")
+    @DeleteMapping("product")
     public void DeleteProduct(@RequestParam("name") String name)
     {
         service.DeleteProduct(name);
+    }
+    @DeleteMapping("products")
+    public void DeleteProductByNameAndPrice(@RequestParam("name") String name, @RequestParam("price") int productprice)
+    {
+        service.DeleteProductByNameAndPrice(name, productprice);
     }
     
 }
