@@ -20,7 +20,8 @@ jobs:
 
       - name: Build with Maven
         run: |
-          cd e-commercewebappspringbootbackend
+          cd ..
+          cd springbootbackend/demo/
           mvn clean install
 
       - name: Upload artifact for deployment job
