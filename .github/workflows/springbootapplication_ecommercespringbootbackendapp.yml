@@ -29,7 +29,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: java-app
-          path: '${{ github.workspace }}/springbootapplication/demo/target/*.jar'
+          path: '${{ github.workspace }}/demo/target/*.jar'
 
   deploy:
     runs-on: windows-latest
@@ -43,7 +43,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: java-app
-          path: '${{ github.workspace }}/springbootapplication/demo/target/*.jar'
+          path: '${{ github.workspace }}/demo/target/*.jar'
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
